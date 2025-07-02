@@ -10,15 +10,15 @@ The website has the following five pages:
 4. Cart Page
 5. Checkout Page
 
-1. Home Page
+# Home Page
 Intro section: “Welcome to the Mini Online Shop – your go-to place for Electronics, Clothing, and Watches.”
 Navigation buttons/links to:
 1. Home
 2. Product Catalog
 3. All Products
-4.  Cart
+4. Cart
 
-2. Product Catalog Page
+# Product Catalog Page
 Display all products with:
 1. ID
 2. Name
@@ -28,14 +28,14 @@ Display all products with:
 6. ➕ Add to Cart button
 7. ➖ Remove from Cart button
 
-3. All Products Page
+# All Products Page
 Show all products
 Features:
 1. Dropdown filter by category
 2. Search bar to find product by ID
 3. ➕ Add to Cart and ➖ Remove from Cart buttons for each item
 
-4. Cart Page
+# Cart Page
 Display all added products:
 1. Name
 2. Price
@@ -45,7 +45,7 @@ Display all added products:
 6. Show total price
 7. Button: “Proceed to Checkout”
 
- 5. Checkout Page
+# Checkout Page
 Show cart summary and total
 1. Choose payment method:
 2. Online Payment
@@ -53,7 +53,7 @@ Show cart summary and total
 4. Button: Place Order (dummy – no real transaction)
 
 
-Additional Notes:
+# Additional Notes:
 1. No login/authentication required
 2. No real payment processing — dummy confirmation
 3. Cart is global (shared session, not per user)

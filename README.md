@@ -1,3 +1,5 @@
+# Download zip file and open the index.html to view the website.
+
 # Mini-Online-Shop
 
 I have built a mini online shop using HTML, CSS and JavaScript. This is a simple, public, non-authenticated application.

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Online Shop - Electronics, Clothing & Watches</title>
+    <meta name="description" content="Your go-to place for Electronics, Clothing, and Watches. Shop quality products at great prices.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="store-icon">🛍️</span>
+                <span class="brand-text">Mini Shop</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="catalog">Catalog</a>
+                <a href="#" class="nav-link" data-page="products">All Products</a>
+                <button class="cart-btn" data-page="cart">
+                    🛒 Cart <span class="cart-count">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero-section">
+                <div class="container">
+                    <h1 class="hero-title">
+                        Welcome to <span class="brand-highlight">Mini Online Shop</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Your go-to place for Electronics, Clothing, and Watches. 
+                        Discover amazing products at unbeatable prices.
+                    </p>
+                    
+                    <div class="category-cards">
+                        <div class="category-card">
+                            <div class="category-icon">📱</div>
+                            <h3>Electronics</h3>
+                            <p>Latest gadgets and tech accessories</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">👕</div>
+                            <h3>Clothing</h3>
+                            <p>Trendy fashion for every occasion</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">⌚</div>
+                            <h3>Watches</h3>
+                            <p>Timeless pieces for every wrist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" data-page="catalog">Browse Catalog</button>
+                        <button class="btn btn-outline" data-page="products">View All Products</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catalog Page -->
+        <div id="catalog" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Product Catalog</h1>
+                    <p>Discover our complete range of products across all categories</p>
+                </div>
+                <div id="catalog-products" class="products-grid"></div>
+            </div>
+        </div>
+
+        <!-- All Products Page -->
+        <div id="products" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>All Products</h1>
+                    <p>Filter and search through our entire product collection</p>
+                </div>
+                
+                <div class="filters">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search by Product ID (e.g., E001, C002, W003)">
+                        <button id="search-btn">🔍</button>
+                    </div>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Watches">Watches</option>
+                    </select>
+                </div>
+                
+                <div id="filtered-products" class="products-grid"></div>
+                <div id="no-results" class="no-results hidden">
+                    <p>No products found matching your criteria.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cart" class="page">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <div id="cart-empty" class="empty-state">
+                    <div class="empty-icon">🛒</div>
+                    <h2>Your Cart is Empty</h2>
+                    <p>Looks like you haven't added anything to your cart yet.</p>
+                    <button class="btn btn-primary" data-page="catalog">Start Shopping</button>
+                </div>
+                <div id="cart-items" class="cart-content hidden">
+                    <div class="cart-items-list"></div>
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Total Items: <span id="total-items">0</span></span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total: $<span id="total-price">0.00</span></span>
+                        </div>
+                        <div class="cart-actions">
+                            <button class="btn btn-primary" data-page="checkout">Proceed to Checkout</button>
+                            <button class="btn btn-outline" data-page="catalog">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Page -->
+        <div id="checkout" class="page">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div id="checkout-empty" class="empty-state">
+                    <h2>No items to checkout</h2>
+                    <p>Add some items to your cart first.</p>
+                    <button class="btn btn-primary" data-page="catalog">Browse Products</button>
+                </div>
+                <div id="checkout-content" class="checkout-grid hidden">
+                    <div class="order-summary">
+                        <h2>📋 Order Summary</h2>
+                        <div id="checkout-items"></div>
+                        <div class="order-total">
+                            <strong>Total Amount: $<span id="checkout-total">0.00</span></strong>
+                        </div>
+                    </div>
+                    <div class="payment-method">
+                        <h2>Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="online" checked>
+                                <div class="option-content">
+                                    <div class="option-icon">💳</div>
+                                    <div>
+                                        <strong>Online Payment</strong>
+                                        <p>Pay securely with credit/debit card</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <div class="option-content">
+                                    <div class="option-icon">🚚</div>
+                                    <div>
+                                        <strong>Cash on Delivery</strong>
+                                        <p>Pay when your order is delivered</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="checkout-actions">
+                            <button id="place-order-btn" class="btn btn-success">
+                                Place Order - $<span id="order-total">0.00</span>
+                            </button>
+                            <button class="btn btn-outline" data-page="cart">Back to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
